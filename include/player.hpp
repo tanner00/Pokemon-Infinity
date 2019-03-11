@@ -1,14 +1,7 @@
 #pragma once
 
+#include "util.hpp"
 #include <SFML/Graphics.hpp>
-
-enum class Direction {
-	None,
-	Left,
-	Right,
-	Up,
-	Down,
-};
 
 class Player {
 private:

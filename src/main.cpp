@@ -1,8 +1,11 @@
+#include "map.hpp"
 #include "player.hpp"
+#include "util.hpp"
 #include <SFML/Graphics.hpp>
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(960, 640), "Pokemon Infinity",
+	sf::RenderWindow window(sf::VideoMode(screenWidth, screenHeight),
+				"Pokemon Infinity",
 				sf::Style::Close | sf::Style::Titlebar);
 	window.setFramerateLimit(60);
 

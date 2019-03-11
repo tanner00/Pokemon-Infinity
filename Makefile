@@ -4,3 +4,7 @@ build:
 run: build
 	cls
 	pinf.exe
+
+report:
+	cls
+	loc --include cpp hpp

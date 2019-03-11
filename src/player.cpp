@@ -1,36 +1,12 @@
 #include "player.hpp"
 #include <cmath>
 
-// @todo: move as constant to map file
-constexpr int tileSize = 64;
-
 Player::Player()
 	: x(0), y(0),
 	  rect(sf::RectangleShape(sf::Vector2f(tileSize, tileSize))) {
 	rect.setFillColor(sf::Color::Blue);
 	rect.setPosition(tileSize, tileSize);
 }
-
-// to some utilities file
-sf::Vector2f directionToUnitVector(Direction d) {
-	switch (d) {
-	case Direction::Left:
-		return sf::Vector2f(-1.0, 0.0);
-	case Direction::Right:
-		return sf::Vector2f(1.0, 0.0);
-	case Direction::Up:
-		return sf::Vector2f(0.0, -1.0);
-	case Direction::Down:
-		return sf::Vector2f(0.0, 1.0);
-	case Direction::None:;
-	}
-	return sf::Vector2f(0.0, 0.0);
-}
-
-int toMultiple(int round, int multiple) {
-	return std::lround((double)round / multiple) * multiple;
-}
-// end: to some utilities file
 
 void Player::update(float dt) {
 	if (move == Direction::None) {
