@@ -2,6 +2,7 @@
 
 #include <SFML/System.hpp>
 #include <cmath>
+#include <random>
 
 enum class Direction {
 	None,
@@ -11,12 +12,15 @@ enum class Direction {
 	Down,
 };
 
-constexpr int tileSize = 64;
+static std::mt19937 ENG(time(NULL));
 
-constexpr int screenWidth = 960;
+constexpr int tileSize = 64;
+constexpr int tileScale = 4;
+
+constexpr int screenWidth = 1344;
 constexpr int screenWidthTiles = screenWidth / tileSize;
 
-constexpr int screenHeight = 640;
+constexpr int screenHeight = 768;
 constexpr int screenHeightTiles = screenHeight / tileSize;
 
 sf::Vector2f directionToUnitVector(Direction d);
